@@ -9,7 +9,7 @@ class UrlsController < ApplicationController
   end
 
   def show
-    redirect_to @url.sanitized_url
+    redirect_to @url.sanitize_url
   end
 
   def create
