@@ -12,4 +12,10 @@ RSpec.describe Url, type: :model do
     url.valid?
     expect(url.errors[:original_url]).to include("Please enter the URL you want to shorten")
   end
+  it "is invalid with an invalid URL" do
+    url = build(:url, original_url: "abc")
+    url.valid?
+    expect(url.errors[:original_url]).to include("Please enter a valid URL")
+  end
+ end
 end
